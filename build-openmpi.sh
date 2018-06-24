@@ -48,4 +48,5 @@ cd $HOME/local
 tar -cf openmpi-bin-${VERSION}.tar openmpi
 bzip2 openmpi-bin-${VERSION}.tar
 
-cp openmpi-bin-${VERSION}.tar.bz2 /host/
+mkdir -p /host/releases
+cp openmpi-bin-${VERSION}.tar.bz2 /host/releases
