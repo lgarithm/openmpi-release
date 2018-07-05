@@ -40,11 +40,14 @@ build_openmpi() {
     measure make install
 }
 
+PREFIX=$HOME/local
+[ ! -z "$1" ] && PREFIX=$1
+
 VERSION=3.1.0
-measure build_openmpi openmpi-${VERSION}.tar.bz2 $HOME/local/openmpi
+measure build_openmpi openmpi-${VERSION}.tar.bz2 ${PREFIX}/openmpi
 
 # pack
-cd $HOME/local
+cd ${PREFIX}
 tar -cf openmpi-bin-${VERSION}.tar openmpi
 bzip2 openmpi-bin-${VERSION}.tar
 
