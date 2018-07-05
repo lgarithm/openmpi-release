@@ -1,1 +1,4 @@
 Scripts for building openmpi from source.
+
+TODO:
+* create deb package
