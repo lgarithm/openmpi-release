@@ -43,6 +43,9 @@ build_openmpi() {
 PREFIX=$HOME/local
 [ ! -z "$1" ] && PREFIX=$1
 
+OUTPUT=openmpi-bin-${VERSION}.tar.bz2
+[ ! -z "$2" ] && OUTPUT=$2
+
 VERSION=3.1.0
 measure build_openmpi openmpi-${VERSION}.tar.bz2 ${PREFIX}/openmpi
 
@@ -52,4 +55,4 @@ tar -cf openmpi-bin-${VERSION}.tar openmpi
 bzip2 openmpi-bin-${VERSION}.tar
 
 mkdir -p /host/releases
-cp openmpi-bin-${VERSION}.tar.bz2 /host/releases
+cp openmpi-bin-${VERSION}.tar.bz2 /host/releases/${OUTPUT}
